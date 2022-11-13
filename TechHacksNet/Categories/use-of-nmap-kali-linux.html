@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="nmap">
+    <meta name="keywords" content="what is nmap">
+    <meta name="keywords" content="kali linux nmap">
+    <meta name="description" content="What's Nmap on Kali Linux? Network and port tests, which are among the basic security elements, are very important. This test is necessary to monitor and test the vulnerabilities in the running services, any deficiency in the network and security measures. Although we think it is safe, new security vulnerabilities are always emerging. It should be done in server-related tests as well as testing web applications.">
+    <title>Kali Linux Use Of Nmap - Tech Hacks Net</title>
+    <link rel="stylesheet" href="style10.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script src="../script.js" async defer></script>
+    <script src="https://kit.fontawesome.com/6b212a7b03.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="navigation-container">
+            <div class="top-head">
+                <div class="web-name">
+                    <h1>TECH HACKS Net</h1>
+                </div>
+
+                <div class="ham-btn">
+                    <span>
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </div>
+
+                <div class="times-btn">
+                    <span>
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="nav-bar" id="nav-bar">
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                        <li><a href="../Current Techniques/current-techniques.html">CURRENT TECHNIQUES</a></li>
+                        <li><a href="categories.html">CATEGORIES</a></li>
+                        <li><a href="../contact.html">CONTACT</a></li>
+                        <li><a href="../about-us.html">ABOUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="banner-main-content">
+                <h2>What's Nmap?</h2>
+                <p>
+                    Network and port tests, which are among the basic security elements, are very important. This test is necessary to monitor and test the vulnerabilities in the running services, any deficiency in the network and security measures. Although we think it is safe, new security vulnerabilities are always emerging. It should be done in server-related tests as well as testing web applications.
+                </p>
+                <p>
+                    Common vulnerabilities in networks are ports and running services. If there is a vulnerability in the software used on the server, it becomes much easier for the attacker to take over the Server. Nmap will also make it significantly easier to find these vulnerabilities.
+                </p>
+                <p>
+                    At the same time, the Nmap tool is the most stable and most used tool for port scans. You can scan ports for all types of systems and obtain different information with many scanning types in it. You can use it not only for port scans, but also for operations such as detecting operating systems, network mapping, firewall tests.
+                </p>
+                <p>
+                    Nmap has a public license. You can access the open source code and develop it as you wish. The Nmap tool is included with Kali Linux.
+                </p>
+            </div>
+            <div class="second-topic">
+                <h2>Nmap Scan Types</h2>
+                <p>
+                    There are many types of scans in the nmap tool. You can perform different types of scans according to the system and according to the services running on the system, firewalls. By typing <code>nmap</code> into the terminal, you can see the types of scans in a sequential manner.
+                </p>
+            </div>
+            <div class="third-topic">
+                <h2>Host Discovery</h2>
+                <p>
+                    It is important to explore hosts on a network or on any server. We can simply list these hosts.
+                </p>
+                <code>' nmap -sP -T4 target-ip '</code>
+                <p>
+                    We can perform our own scan. In a simple way, we perform a ping scan with the '-sP' parameter and speed up our scan in the form of '-T4'.
+                </p>
+                <p>
+                    This scan sends <b>SYN</b> packets to the 80 ports of the hosts on the network in a simple way, giving us the output according to the responses.
+                </p>
+                <p>
+                    We can also get our goals from a txt file.
+                </p>
+                <code>' nmap -sV -iL /root/Desktop/hosts.txt '</code>
+                <p>
+                    We performed our first scan. We scanned the services of the targets we received from the txt file with the <b>'-iL'</b> parameter with the <b>'-sV'</b> parameter, as can be seen. This way you can perform a batch scan.
+                </p>
+            </div>
+            <div class="fourth-topic">
+                <h2>Scan Options</h2>
+                <p>
+                    As we mentioned earlier, there are many scanning options in the Nmap tool.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Command</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <td>TCP SYN Scan</td>
+                                <td>-sS</td>
+                            </tr>
+                            <tr>
+                                <td>ACK Scan</td>
+                                <td>-sA</td>
+                            </tr>
+                            <tr>
+                                <td>FIN Scan</td>
+                                <td>-sF</td>
+                            </tr>
+                            <tr>
+                                <td>Window Scan</td>
+                                <td>-sW</td>
+                            </tr>
+                            <tr>
+                                <td>TCP Connect Scan</td>
+                                <td>-sT</td>
+                            </tr>
+                            <tr>
+                                <td>Ping Scan</td>
+                                <td>-sP</td>
+                            </tr>
+                            <tr>
+                                <td>UDP Scan</td>
+                                <td>-sU</td>
+                            </tr>
+                            <tr>
+                                <td>Version Detection</td>
+                                <td>-sV</td>
+                            </tr>
+                            <tr>
+                                <td>Ip Protocol Scan</td>
+                                <td>-sO</td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+            <div class="fifth-topic">
+                <h2>TCP SYN SCAN</h2>
+                <p>
+                    It sends <strong>TCP Syn</strong> packets to the target. If the ports are open, the <strong>SYN-ACK</strong> response will return. if the machine is making a call, the scan will end by sending Dec <strong>RST</strong> packet.
+                </p>
+                <p>
+                    We can complete our scan in the form of <code>'nmap -sS target-ip'</code>.
+                </p>
+            </div>
+            <div class="sixed-topic">
+                <h2>ACK SCAN</h2>
+                <p>
+                    In the meantime, Dec sends <strong>TCP ACK</strong> packets to the destination. If no response is returned, or if an <strong>ICMP Destination Unreachable</strong> response is received, the ports are returned as "filtered". So it responds to us with filters.
+                </p>
+                <p>
+                    If the targer sends an RST-flagged packet, the ports return <strong>"unfiltered"</strong>, that is, unfiltered.
+                </p>
+                <p>
+                    We have performed our scan in the form of <code>'nmap -sA target-ip -p target-port'</code>. After our <code>'-sA'</code> parameter, we set the destination and selected the port to be scanned with the <code>'-p'</code> parameter. After the scan is performed, it responds to you as <strong>"filtered"</strong> or <strong>"unfiltered"</strong>.
+                </p>
+            </div>
+            <div class="seventh-topic">
+                <h2>FIN SCAN</h2>
+                <p>
+                    In this scan, packets with <strong>FIN</strong> flags are sent to the target. If the closed port is detected during a batch port scan, the packet with the <strong>RST - ACK</strong> flag is returned. If the port is open, no response is returned.
+                </p>
+                <p>
+                    The <code>'-sF'</code> parameter is used in this scan. In this way, you can perform the scan or you can perform the scan directly without specifying a port.
+                </p>
+            </div>
+            <div class="eighted-topic">
+                <h2>WINDOW SCAN</h2>
+                <p>
+                    According to the size of the <strong>RST</strong> <em>frame</em> of the responses returned in the form of this scan, we can understand whether the port is open or not. If it is <b>0</b>, it is closed. if it is in a size other than <b>0</b>, it means that the port is open.
+                </p>
+                <p>
+                    In this scan, we use the <code>'-sW'</code> parameter. As it turned out, our scan was performed. And also you can see the open ports by checking the rotating packets with the <strong>Wireshark</strong> tool.
+                </p>
+            </div>
+            <div class="nineth-topic">
+                <h2>TCP CONNECT SCAN</h2>
+                <p>
+                    This is similar to the "<strong>TCP SYN Scan</strong>" in my scan. This similarity is the <strong>RST - ACK</strong> packets that the target will send in cases where the ports are closed.
+                </p>
+                <p>
+                    In obvious cases, the scanning machine in response to the target's <strong>RST-ACK</strong> packets sends <strong>ACK-flagged</strong> packets to the target and the handshake is completed.
+                </p>
+                <p>
+                    We complete it in the form of <code>'nmap -sT target-ip'</code>. You can also check the parameters from the table I have prepared in advance.
+                </p>
+            </div>
+            <div class="tenth-topic">
+                <h2>PING SCAN</h2>
+                <p>
+                    In this type of scan, a single packet is sent and the destination <strong>ICMP Echo</strong> sends the response. If the sent packet is subjected to filtering, the destination machine does not send any response. You can perform this scan using the <code>'-sP'</code> parameter.
+                </p>
+                <p>
+                    Here, the scanning machine sends UDP packets to the target machine. If the destination machine responds with UDP packets, it means that the ports are open. If the ICMP Port returns an Unreachable response, it means that it is closed, and if it does not give any response, it means that it is <strong>open - filtered</strong>. The parameter used in the scan is the <code>'-sU'</code> parameter. This is how you can perform a scan.
+                </p>
+            </div>
+            <div class="eleventh-topic">
+                <h2>IP PROTOCOL SCAN</h2>
+                <p>
+                    In this type of scan, the source machine sends <strong>IP</strong> packets to the destination, and the destination machine responds to these packets with <strong>RST packets</strong>. If access is not provided, it will not return any response. The <code>'-sO'</code> parameter is used in this scan.
+                </p>
+            </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>TECH HACKS NET</h2>
+                <p>
+                    We all see that technology is developing more and more every day during this period in which we are located, and Tech Hacks Net aims to raise people's awareness about this issue by providing different information about hacking and cybersecurity to random people from all over the world within the framework of ethical and legal conditions.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Current Techniques/current-techniques.html">Current Techniques</a></li>
+                <li><a href="Categories/categories.html">Categories</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../about-us.html">About Us</a></li>
+                <li><a href="../forums.html">Forums</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+        <p>
+            Copyright &copy; 2022 All rights reserved | Imran
+        </p>
+        </div>
+        <p>
+            All of them are intended for educational purposes, we do not accept responsibility for their illegal use.
+        </p>
+    </footer>
+</body>
+</html>
